@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tailoring app by Habeel</title>
+
+    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="./public/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("./public/splash.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg">
+        <h5 style="margin: 0; padding: 10px; padding-top: 40px;"><small><i>Design by &nbsp;</i></small> Habeel</h5>
+    </div>
+
+    <!-- Insert this line above script imports  -->
+    <script>
+        if (typeof module === 'object') { window.module = module; module = undefined; }
+    </script>
+
+    <!-- normal script imports etc  -->
+    <script src="./public/materialize.min.js"></script>
+    <script src="./public/jquery-3.4.1.slim.min.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src="../renderer.js"></script>
+    <script>
+        const electron = require('electron')
+        const remote = electron.remote
+
+        setTimeout(() => {
+            var window = remote.getCurrentWindow();
+            window.close();
+        }, 5000)
+    </script>
+
+</body>
+
+</html>

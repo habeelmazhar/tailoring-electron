@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tailoring app by Habeel</title>
+
+  <link rel="stylesheet" href="./public/style.css">
+  <link rel="stylesheet" href="./public/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+  <br>
+  <div class="row">
+    <div class="col s12">
+      <a id="btn_add" class="waves-effect waves-light btn"><img class="material-icon" src="./public/add.svg"
+          alt="">Add</a>
+      <!-- <a id="btn_search" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Search</a> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="input-field">
+        <input id="search" type="text" class="validate" onkeyup="myFunction()">
+        <label class="active" for="search">Name / S.no / Cell no</label>
+      </div>
+
+      <table id="table" class="table-responsive striped">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Cell no.</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+
+        <tbody id="data_container">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Insert this line above script imports  -->
+  <script>
+    if (typeof module === 'object') { window.module = module; module = undefined; }
+  </script>
+
+  <!-- normal script imports etc  -->
+  <script src="./public/materialize.min.js"></script>
+  <script src="./public/jquery-3.4.1.slim.min.js"></script>
+
+  <!-- Insert this line after script imports -->
+  <script>
+    if (window.module) module = window.module;
+  </script>
+
+
+
+  <!-- You can also require other files to run in this process -->
+  <script src="../renderer.js"></script>
+  <script src="./index.js"></script>
+
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("table");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td0 = tr[i].getElementsByTagName("td")[0];
+        td1 = tr[i].getElementsByTagName("td")[1];
+        td2 = tr[i].getElementsByTagName("td")[2];
+        if (td0) {
+          txtValue1 = td0.textContent || td0.innerText;
+          txtValue2 = td1.textContent || td1.innerText;
+          txtValue3 = td2.textContent || td2.innerText;
+          if (txtValue1.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1 || txtValue3.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "tailoring",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "electron-builder --win"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^5.0.6",
+    "electron-reload": "^1.4.0",
+    "electron-builder": "^21.0.15"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}
